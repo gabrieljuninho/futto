@@ -8,6 +8,11 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
+enum Role {
+  ADMIN
+  MEMBER
+}
+
 model User {
   id            String    @id @default(cuid())
   username      String?   @unique
@@ -16,6 +21,7 @@ model User {
   emailVerified DateTime? @map("email_verified")
   password      String?
   image         String?
+  role          Role      @default(MEMBER)
   createdAt     DateTime  @default(now()) @map("created_at")
   updatedAt     DateTime  @updatedAt @map("updated_at")
 
