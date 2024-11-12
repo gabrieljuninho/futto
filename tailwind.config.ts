@@ -4,7 +4,11 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 
 const config: Config = {
   darkMode: ["class"],
-  content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
+  content: [
+    "app/**/*.{ts,tsx}",
+    "components/**/*.{ts,tsx}",
+    "features/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -57,6 +61,7 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        link: "hsl(var(--link))",
       },
       fontFamily: {
         geist: ["var(--font-geist-sans)", ...fontFamily.sans],
